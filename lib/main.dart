@@ -200,10 +200,10 @@ class _SearchPageState extends State<SearchPage> {
               child: _loading
                   ? const Center(child: CircularProgressIndicator())
                   : _photos.isEmpty
-                  ? _noResults
-                  ? const Center(child: Text('No results found. Try a different search.'))
-                  : Container()
-                  : _buildPhotoList(),
+                      ? _noResults
+                          ? const Center(child: Text('No results found. Try a different search.'))
+                          : Container()
+                      : _buildPhotoList(),
             ),
           ],
         ),
@@ -218,7 +218,7 @@ class _SearchPageState extends State<SearchPage> {
         if (index < _photos.length) {
           final Photo photo = _photos[index];
           final String limitedDescription =
-          photo.description.length > 50 ? '${photo.description.substring(0, 50)}...' : photo.description;
+              photo.description.length > 50 ? '${photo.description.substring(0, 50)}...' : photo.description;
 
           return GestureDetector(
             onTap: () {
